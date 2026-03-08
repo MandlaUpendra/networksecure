@@ -45,7 +45,7 @@ class DataIngestion:
             feature_store_file_path = self.data_ingestion_config.feature_store_file_path
 
             dir_path = os.path.dirname(feature_store_file_path)
-            os.makedir(dir_path,exist_ok=True)
+            os.makedirs(dir_path,exist_ok=True)
             dataframe.to_csv(feature_store_file_path,index=False,header=True)
             return dataframe
         except Exception as e:
@@ -68,7 +68,7 @@ class DataIngestion:
 
             logging.info("Pushed train and test data.")
         except Exception as e:
-            raise NetworkSecurityException(e, sys)
+            raise NetworkSecurityException(e,sys)
         
 
     def initiate_data_ingestion(self):
@@ -80,5 +80,4 @@ class DataIngestion:
                                                         test_file_path=self.data_ingestion_config.testing_file_path)
             return dataingestionartifact
         except Exception as e:
-            return NetworkSecurityException(e, sys)
-        
+            return NetworkSecurityException(e, sys)      
