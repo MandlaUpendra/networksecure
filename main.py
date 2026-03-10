@@ -49,14 +49,14 @@ try:
 except Exception as e:
     raise NetworkSecurityException(e, sys)
 
-STAGE_NAME = "model_training_stage"
+# STAGE_NAME = "model_training_stage"
 
-try:
-    logging.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-    trainingpipelineconfig = TrainingPipelineConfig()
-    modeltrainerconfig = ModelTrainerConfig(trainingpipelineconfig)
-    model_trainer = ModelTrainer(modeltrainerconfig,data_transformation_artifact)
-    model_trainer_artifact = model_trainer.initiate_model_trainer() 
-    logging.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
-except Exception as e:
-    raise NetworkSecurityException(e,sys)
+# try:
+#     logging.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+#     trainingpipelineconfig = TrainingPipelineConfig()
+#     modeltrainerconfig = ModelTrainerConfig(trainingpipelineconfig)
+#     model_trainer = ModelTrainer(modeltrainerconfig,data_transformation_artifact)
+#     model_trainer_artifact = model_trainer.initiate_model_trainer() 
+#     logging.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+# except Exception as e:
+#     raise NetworkSecurityException(e,sys)
